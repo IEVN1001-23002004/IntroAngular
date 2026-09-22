@@ -10,7 +10,7 @@ export class HeroesList {
   imageWidth:number=40;
   imageMargin:number=2;
   muestraImage:boolean=true;
-  listFilter:String='';
+  listFilter:string='';
 
    showImage():void{
     this.muestraImage=!this.muestraImage;
