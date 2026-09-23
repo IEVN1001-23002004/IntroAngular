@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+  <h3>Validación de Credenciales</h3>
+
+  <label>Usuario:</label>
+  <br>
+  <input type="text" [(ngModel)]="usuarioIngresado" placeholder="Ingresa tu usuario">
+
+  <br><br>
+
+  <label>Contraseña:</label>
+  <br>
+  <input type="password" [(ngModel)]="contrasenaIngresada" placeholder="Ingresa tu contraseña">
+
+  <br><br>
+
+  <button (click)="validar()" type="button" class="btn btn-primary">
+    Validar Acceso
+  </button>
+
+  <br><br>
+
+  <h3 *ngIf="mensaje !== ''">{{ mensaje }}</h3>
+</div>
+</body>
+</html>

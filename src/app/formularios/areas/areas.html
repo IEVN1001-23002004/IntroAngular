@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+  <h3>Calcular Áreas</h3>
+
+  <label>
+    <input type="radio" name="figura" value="circulo" [(ngModel)]="figura"> Círculo
+  </label>
+  <br>
+
+  <label>
+    <input type="radio" name="figura" value="triangulo" [(ngModel)]="figura"> Triángulo
+  </label>
+  <br>
+
+  <label>
+    <input type="radio" name="figura" value="rectangulo" [(ngModel)]="figura"> Rectángulo
+  </label>
+  <br>
+
+  <label>
+    <input type="radio" name="figura" value="pentagono" [(ngModel)]="figura"> Pentágono
+  </label>
+
+  <br><br>
+
+
+  <div *ngIf="figura === 'circulo'">
+    <input type="number" [(ngModel)]="radio" placeholder="Radio">
+  </div>
+
+  <div *ngIf="figura === 'triangulo' || figura === 'rectangulo'">
+    <input type="number" [(ngModel)]="base" placeholder="Base">
+    <input type="number" [(ngModel)]="altura" placeholder="Altura">
+  </div>
+
+  <div *ngIf="figura === 'pentagono'">
+    <input type="number" [(ngModel)]="lado" placeholder="Medida del lado">
+    <input type="number" [(ngModel)]="apotema" placeholder="Apotema">
+  </div>
+
+  <br>
+
+  <button (click)="calcular()" type="button" class="btn btn-primary">
+    Calcular
+  </button>
+
+  <h3>Área: {{ resultado }}</h3>
+</div>
+</body>
+</html>
