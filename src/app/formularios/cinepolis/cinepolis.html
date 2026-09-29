@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="pantalla">
+  <div class="contenido">
+
+    <h2 class="titulo">Cinepolis</h2>
+
+    <div class="fila-superior">
+      <fieldset class="panel-entradas">
+        <legend>Entradas</legend>
+        <p>Nombre <input type="text" [(ngModel)]="nombre"></p>
+        <p>Cantidad Compradores <input type="number" [(ngModel)]="compradores"></p>
+        <p>
+          Tarjeta Cineco
+          <span class="radios">
+            <label><input type="radio" name="tarjeta" [value]="true" [(ngModel)]="conTarjeta"> Si</label>
+            <label><input type="radio" name="tarjeta" [value]="false" [(ngModel)]="conTarjeta"> No</label>
+          </span>
+        </p>
+        <p>Cantidad De Boletas <input type="number" [(ngModel)]="boletos"></p>
+      </fieldset>
+
+      <fieldset class="panel-salidas">
+        <legend>Salidas</legend>
+        <p>Valor a Pagar <input type="text" [value]="total" readonly></p>
+        <div class="mensaje">{{ mensaje }}</div>
+      </fieldset>
+    </div>
+
+    <div class="logo">
+      <span class="estrella">★</span>
+      <div class="texto-marca">
+        <h2>Cinépolis.</h2>
+        <small>LA CAPITAL DEL CINE</small>
+      </div>
+    </div>
+
+    <fieldset class="panel-acciones">
+      <legend>Acciones</legend>
+      <button type="button" (click)="procesar()">Procesar</button>
+      <button type="button" (click)="salir()">Salir</button>
+    </fieldset>
+
+  </div>
+</div>
+</body>
+</html>
